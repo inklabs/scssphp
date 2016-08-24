@@ -3198,10 +3198,7 @@ class Compiler
             $this->importCache[$realPath] = $tree;
         }
 
-        $pi = pathinfo($path);
-        array_unshift($this->importPaths, $pi['dirname']);
         $this->compileChildrenNoReturn($tree->children, $out);
-        array_shift($this->importPaths);
     }
 
     /**
